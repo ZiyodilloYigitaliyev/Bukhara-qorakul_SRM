@@ -1,0 +1,7 @@
+from .student import Student
+from .score import Score
+from .attendance import Attendance
+from .user import User
+from .staff import Staff
+from .teacher import Teacher  
+from .schedule import Schedule
