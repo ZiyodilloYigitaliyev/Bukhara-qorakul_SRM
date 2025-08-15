@@ -1,20 +1,29 @@
-from fastapi import APIRouter, Depends, HTTPException
+# app/api/routes/auth_student.py
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi.security import OAuth2PasswordRequestForm
-
+from sqlalchemy.future import select
+from passlib.context import CryptContext
+from app.models.student import Student
+from app.schemas.auth import StudentLogin, Token
 from app.db.database import get_db
-from app.schemas.student_auth import LoginSchema, TokenSchema
 from app.core.security import create_access_token
-from app.core.utils import verify_password
-from app.crud.student import get_student_by_login
 
-router = APIRouter()
+router = APIRouter(prefix="/login", tags=["Mobile Login"])
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-@router.post("/student-login", response_model=TokenSchema)
-async def student_login(data: LoginSchema, db: AsyncSession = Depends(get_db)):
-    student = await get_student_by_login(db, data.login)
-    if not student or not verify_password(data.password, student.password):
-        raise HTTPException(status_code=401, detail="Login yoki parol noto‘g‘ri")
+@router.post("/student", response_model=Token)
+async def student_login(data: StudentLogin, db: AsyncSession = Depends(get_db)):
+    result = await db.execute(select(Student).where(Student.login == data.login))
+    student = result.scalar_one_or_none()
 
-    access_token = create_access_token({"sub": student.login, "role": "student"})
-    return {"access_token": access_token, "token_type": "bearer"}
+    if not student:
+        raise HTTPException(status_code=401, detail="Login topilmadi")
+
+    if not pwd_context.verify(data.password, student.hashed_password):
+        raise HTTPException(status_code=401, detail="Parol noto‘g‘ri")
+
+    access_token = create_access_token({"sub": str(student.id), "role": "student"})
+    return {
+        "access_token": access_token,
+        "token_type": "bearer"  
+    }

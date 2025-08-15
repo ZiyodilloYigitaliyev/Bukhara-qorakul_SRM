@@ -1,0 +1,862 @@
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:15.933245 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:16.996244 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:18.060245 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:19.110245 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:20.163245 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:21.193292 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:22.251244 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:23.300247 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:24.363245 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:25.397287 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:26.459247 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:36.668372 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:37.747497 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:38.895548 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:40.015549 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	80,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T08:39:27+05:00",
+	"activePostCount":	1,
+	"eventType":	"heartBeat",
+	"eventState":	"active",
+	"eventDescription":	"heartBeat"
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:40.063548 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:41.178548 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:39:42.230548 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:01.802213 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:02.860214 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:04.106214 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:05.219215 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:06.415213 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:07.517213 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:08.587213 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:09.673214 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:10.873213 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:11.991220 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:13.042214 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:14.082214 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	80,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T08:41:01+05:00",
+	"activePostCount":	1,
+	"eventType":	"heartBeat",
+	"eventState":	"active",
+	"eventDescription":	"heartBeat"
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:14.139214 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:15.306215 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:16.457289 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}
+
+
+=== 📥 Kiruvchi log: 2025-07-18 08:41:17.514800 ===
+{
+	"ipAddress":	"192.168.0.100",
+	"portNo":	8000,
+	"protocol":	"HTTP",
+	"macAddress":	"a4:d5:c2:4a:2e:26",
+	"channelID":	1,
+	"dateTime":	"2025-07-18T07:03:18+05:00",
+	"activePostCount":	1,
+	"eventType":	"AccessControllerEvent",
+	"eventState":	"active",
+	"eventDescription":	"Access Controller Event",
+	"shortSerialNumber":	"FX6348822",
+	"AccessControllerEvent":	{
+		"deviceName":	"Access Controller",
+		"majorEventType":	5,
+		"subEventType":	21,
+		"doorNo":	1,
+		"serialNo":	188,
+		"frontSerialNo":	187,
+		"label":	"",
+		"purePwdVerifyEnable":	true
+	}
+}

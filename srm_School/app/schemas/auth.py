@@ -3,6 +3,10 @@ from pydantic import BaseModel
 class LoginRequest(BaseModel):
     username: str
     password: str
+    
+class StudentLogin(BaseModel):
+    login: str
+    password: str
 
 class Token(BaseModel):
     access_token: str

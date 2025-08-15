@@ -1,8 +1,8 @@
-"""update  table
+"""Add face_terminal_id to student
 
-Revision ID: 4f5cb19412ac
-Revises: d9a2a6226fb2
-Create Date: 2025-06-23 20:59:18.973666
+Revision ID: 2342c0bd7c33
+Revises: c1979c300f1b
+Create Date: 2025-07-18 08:10:13.045168
 
 """
 from typing import Sequence, Union
@@ -12,8 +12,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '4f5cb19412ac'
-down_revision: Union[str, Sequence[str], None] = 'd9a2a6226fb2'
+revision: str = '2342c0bd7c33'
+down_revision: Union[str, Sequence[str], None] = 'c1979c300f1b'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

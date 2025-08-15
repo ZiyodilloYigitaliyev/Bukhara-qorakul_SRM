@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Float, Boolean
+from sqlalchemy import Column, ForeignKey, Integer, String, Date, Float, Boolean
 from sqlalchemy.orm import relationship
 from app.db.base import Base
 
@@ -13,6 +13,7 @@ class Student(Base):
     image_url = Column(String(255), nullable=True)
     birth_date = Column(Date, nullable=True)
     gender = Column(String(10), nullable=True)
+    face_terminal_id = Column(Integer, unique=True, nullable=True)
 
     parent_father_name = Column(String(100), nullable=True)
     parent_father_phone = Column(String(20), nullable=True)
@@ -20,6 +21,10 @@ class Student(Base):
     parent_mother_phone = Column(String(20), nullable=True)
     class_name = Column(String(20), nullable=True)
     is_active = Column(Boolean, default=True)
+    login = Column(String(50), unique=True, nullable=False)
+    hashed_password = Column(String(128), nullable=False)
     attendances = relationship("Attendance", back_populates="student", cascade="all, delete-orphan")
     scores = relationship("Score", back_populates="student", cascade="all, delete-orphan")
+    school_id = Column(Integer, ForeignKey("schools.id"), nullable=False)
+    school = relationship("School", backref="students")
 

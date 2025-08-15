@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from app.db.base import Base
 from sqlalchemy.orm import relationship
+
 
 class Teacher(Base):
     __tablename__ = "teachers"
@@ -12,4 +13,5 @@ class Teacher(Base):
     phone_number = Column(String, unique=True, nullable=False)
     is_active = Column(Boolean, default=True)
     schedules = relationship("Schedule", back_populates="teacher")
-    
+    school_id = Column(Integer, ForeignKey("schools.id"), nullable=False)
+    school = relationship("School", backref="teachers")

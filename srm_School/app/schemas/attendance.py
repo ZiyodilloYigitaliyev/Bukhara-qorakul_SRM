@@ -3,12 +3,6 @@ from datetime import date, time, datetime
 from pydantic import BaseModel
 from typing import Optional
 
-class AttendanceCreate(BaseModel):
-    student_id: int
-    date: date
-    check_in_time: time | None = None
-    is_present: bool
-    late_minutes: int = 0
 
 class AttendanceOut(BaseModel):
     id: int
@@ -25,3 +19,13 @@ class AttendanceCreate(BaseModel):
     student_id: int
     date: date
     arrival_time: datetime
+
+class TerminalLog(BaseModel):
+    serial_number: str  # Qurilma serial raqami
+    datetime: datetime  # Log vaqti
+    event_type: int     # Asosiy event turi
+    sub_event_type: int # Sub event turi
+    user_type: str      # Foydalanuvchi turi
+    employee_id: int    # Student ID (terminaldan kelgan)
+    device_name: str    # Qurilma nomi
+

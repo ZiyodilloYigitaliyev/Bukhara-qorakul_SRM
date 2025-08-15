@@ -11,36 +11,25 @@ from fastapi import HTTPException
 
 router = APIRouter(prefix="/attendance", tags=["Attendance"])
 
-@router.post("/", response_model=AttendanceOut)
 async def create_attendance(
     data: AttendanceCreate,
     db: AsyncSession = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
-    # 1. Maktab ochilish vaqti (08:00)
-    school_start_time = time(8, 0)
+    school_start = time(8, 0)
+    arrival = data.arrival_time.time()
+    late = max((datetime.combine(data.date, arrival) - datetime.combine(data.date, school_start)).seconds // 60, 0)
 
-    # 2. Kelgan vaqtni faqat vaqt qismini olish
-    arrival_time = data.arrival_time.time()
-    
-    # 3. Kech qolgan daqiqalarni hisoblash
-    late_minutes = 0
-    if arrival_time > school_start_time:
-        delta = datetime.combine(data.date, arrival_time) - datetime.combine(data.date, school_start_time)
-        late_minutes = delta.seconds // 60
-
-    # 4. Yangi Attendance obyektini yaratish
-    new_attendance = Attendance(
+    new_att = Attendance(
         student_id=data.student_id,
         date=data.date,
-        arrival_time=arrival_time,
-        late_minutes=late_minutes
+        arrival_time=arrival,
+        late_minutes=late
     )
-
-    db.add(new_attendance)
+    db.add(new_att)
     await db.commit()
-    await db.refresh(new_attendance)
-    return new_attendance
+    await db.refresh(new_att)
+    return new_att
 
 @router.get("/", response_model=List[AttendanceOut])
 async def get_all_attendance(
