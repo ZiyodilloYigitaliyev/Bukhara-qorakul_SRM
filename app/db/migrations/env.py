@@ -3,6 +3,12 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 from app.core.config import settings
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]  # .../Bukhara-qorakul_SRM
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 config = context.config
 if config.config_file_name is not None:
