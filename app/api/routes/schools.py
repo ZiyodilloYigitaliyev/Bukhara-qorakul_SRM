@@ -68,17 +68,22 @@ async def update_school(
     return school
 
 
-@router.delete("/{school_id}")
-async def delete_school(
-    school_id: int,
-    db: AsyncSession = Depends(get_db),
-    user=Depends(require_role("superuser"))
-):
-    result = await db.execute(select(School).where(School.id == school_id))
-    school = result.scalar_one_or_none()
+@router.delete("/{school_id}", status_code=204)
+async def delete_school(school_id: int, db: AsyncSession = Depends(get_db)):
+    # 1) Student bor-yo‘qligini tekshiring
+    cnt = (await db.execute(
+        select(func.count()).select_from(Student).where(Student.school_id == school_id)
+    )).scalar_one()
+    if cnt > 0:
+        # 409 – avval ko‘chirishni talab qiling
+        raise HTTPException(
+            status_code=409,
+            detail=f"Ushbu maktabga biriktirilgan {cnt} ta o‘quvchi bor. Avval ularni boshqa maktabga ko‘chiring."
+        )
+
+    # 2) Keyin o‘chirish
+    school = await db.get(School, school_id)
     if not school:
         raise HTTPException(status_code=404, detail="Maktab topilmadi")
-
     await db.delete(school)
     await db.commit()
-    return {"detail": "Maktab muvaffaqiyatli o'chirildi"}
