@@ -20,8 +20,8 @@ async def create_superuser():
 
         superuser = User(
             full_name="Ziyodillo yigitaliyev",
-            username="admin",
-            hashed_password=hash_password("admin"),  # parolni o'zgartiring
+            username="Unix@1129BQSRM",  
+            hashed_password=hash_password("!u@n#i$x@1129"),  # parolni o'zgartiring
             role="superuser",
             is_active=True
         )
