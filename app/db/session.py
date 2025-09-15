@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sess
 from app.core.config import settings
 
 engine = create_async_engine(
-    settings.ASYNC_DATABASE_URL,   # ✅ har doim postgresql+asyncpg://... bo'ladi (prod-da sslmode=require qo'shiladi)
+    settings.ASYNC_DATABASE_URL,   # ✅ endi bu yerda ssl=true bo'ladi (prod), lokalda ssl yo'q
     echo=False,
     pool_pre_ping=True,
 )
