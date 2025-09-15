@@ -1,35 +1,59 @@
-import os
+# app/db/migrations/env.py
+from __future__ import annotations
+
+import sys
+from pathlib import Path
 from logging.config import fileConfig
+
+from sqlalchemy import create_engine, pool
 from alembic import context
-from sqlalchemy import engine_from_config, pool
-from app.core.config import settings
 
-
+# project root to sys.path
+ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 config = context.config
-if config.config_file_name is not None:
-    fileConfig(config.config_file_name)
 
-# Base + barcha modellarning metadata'sini yuklash
-from app.db.base import Base   # Base = declarative_base()
-import app.models              # models/__init__.py ichida barcha modellaringiz import qilingan bo'lsin
+# logging (ini bo'lmasa ham yiqilmasin)
+try:
+    if config.config_file_name:
+        fileConfig(config.config_file_name)
+except Exception as e:
+    print(f"[alembic] logging config skipped: {e}")
+
+from app.core.config import settings
+from app.db.base import Base
+import app.models  # noqa: F401  # metadata to'lsin
 
 target_metadata = Base.metadata
 
-def _sync_url() -> str:
-    return settings.SYNC_DATABASE_URL  # psycopg2 + sslmode=require (prod)
-
-def run_migrations_offline():
-    context.configure(url=_sync_url(), target_metadata=target_metadata, literal_binds=True, dialect_opts={"paramstyle": "named"})
+def run_migrations_offline() -> None:
+    url = settings.SYNC_DATABASE_URL  # psycopg2 (+ sslmode=require prod’da)
+    context.configure(
+        url=url,
+        target_metadata=target_metadata,
+        literal_binds=True,
+        dialect_opts={"paramstyle": "named"},
+        compare_type=True,
+        compare_server_default=True,
+    )
     with context.begin_transaction():
         context.run_migrations()
 
-def run_migrations_online():
-    configuration = config.get_section(config.config_ini_section) or {}
-    configuration["sqlalchemy.url"] = _sync_url()
-    connectable = engine_from_config(configuration, prefix="sqlalchemy.", poolclass=pool.NullPool)
+def run_migrations_online() -> None:
+    connectable = create_engine(
+        settings.SYNC_DATABASE_URL,  # MUHIM: SYNC URL
+        poolclass=pool.NullPool,
+        future=True,
+    )
     with connectable.connect() as connection:
-        context.configure(connection=connection, target_metadata=target_metadata)
+        context.configure(
+            connection=connection,
+            target_metadata=target_metadata,
+            compare_type=True,
+            compare_server_default=True,
+        )
         with context.begin_transaction():
             context.run_migrations()
 

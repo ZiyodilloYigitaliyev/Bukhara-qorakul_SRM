@@ -13,7 +13,7 @@ def _is_local(url: str) -> bool:
 ASYNC_URL = settings.ASYNC_DATABASE_URL
 extra = {}
 if not _is_local(ASYNC_URL):
-    # Heroku/RDS uchun asyncpg'ga ssl'ni majburan yoqamiz
+    # Heroku / RDS: asyncpg'ga SSL'ni majburan yoqib yuboramiz
     extra["connect_args"] = {"ssl": True}
 
 engine = create_async_engine(
