@@ -26,14 +26,10 @@ def _normalize_db_url(url: Optional[str], driver: Literal["asyncpg", "psycopg2"]
     is_local = ("localhost" in u) or ("127.0.0.1" in u)
 
     if not is_local:
-        if driver == "psycopg2":
-            # Alembic/sync uchun: sslmode=require
-            u = _set_query_params(u, remove=["ssl"], add={"sslmode": "require"})
-        else:  # asyncpg
-            # asyncpg sslmode'ni bilmaydi; ssl=true bo'lsin
-            u = _set_query_params(u, remove=["sslmode"], add={"ssl": "true"})
+        # Prod/Heroku: har ikki drayver uchun ham sslmode=require ishlataymiz
+        u = _set_query_params(u, remove=["ssl"], add={"sslmode": "require"})
     else:
-        # lokalda ssl parametrlari kerak emas
+        # Lokal: ssl parametrlarini olib tashlaymiz
         u = _set_query_params(u, remove=["sslmode", "ssl"])
 
     return u
@@ -45,23 +41,20 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
-
-    # boshqalar...
-
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        extra="ignore",
-    )
+    ESKIZ_BASE_URL: str 
+    ESKIZ_EMAIL: str
+    ESKIZ_PASSWORD: str
+    ESKIZ_FROM: str
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     @property
     def ASYNC_DATABASE_URL(self) -> str:
-        # App uchun asyncpg + prod-da ssl=true
+        # App (SQLAlchemy async + asyncpg) uchun
         return _normalize_db_url(self.DATABASE_URL, "asyncpg") or self.DATABASE_URL
 
     @property
     def SYNC_DATABASE_URL(self) -> str:
-        # Alembic uchun psycopg2 + prod-da sslmode=require
+        # Alembic (psycopg2) uchun
         return _normalize_db_url(self.DATABASE_URL, "psycopg2") or self.DATABASE_URL
 
 settings = Settings()
