@@ -1,37 +1,23 @@
-# app/core/config.py
 from typing import Optional, Literal
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-def _set_query_params(u: str, remove: list[str] = None, add: dict[str, str] = None) -> str:
-    p = urlparse(u)
-    q = dict(parse_qsl(p.query, keep_blank_values=True))
-    for k in (remove or []):
-        q.pop(k, None)
-    if add:
-        q.update(add)
+def _set_qs(u: str, remove=None, add=None) -> str:
+    p = urlparse(u); q = dict(parse_qsl(p.query, keep_blank_values=True))
+    for k in (remove or []): q.pop(k, None)
+    if add: q.update(add)
     return urlunparse(p._replace(query=urlencode(q, doseq=True)))
 
-def _normalize_db_url(url: Optional[str], driver: Literal["asyncpg", "psycopg2"]) -> Optional[str]:
-    if not url:
-        return url
+def _norm(url: Optional[str], driver: Literal["asyncpg","psycopg2"]) -> Optional[str]:
+    if not url: return url
     u = url.strip()
-
-    # Prefixni to‘g‘rilash
     if u.startswith("postgres://"):
         u = u.replace("postgres://", f"postgresql+{driver}://", 1)
     elif u.startswith("postgresql://") and "+asyncpg" not in u and "+psycopg2" not in u:
         u = u.replace("postgresql://", f"postgresql+{driver}://", 1)
-
     is_local = ("localhost" in u) or ("127.0.0.1" in u)
-
-    if not is_local:
-        # Prod/Heroku: har ikki drayver uchun ham sslmode=require ishlataymiz
-        u = _set_query_params(u, remove=["ssl"], add={"sslmode": "require"})
-    else:
-        # Lokal: ssl parametrlarini olib tashlaymiz
-        u = _set_query_params(u, remove=["sslmode", "ssl"])
-
+    if not is_local: u = _set_qs(u, remove=["ssl"], add={"sslmode": "require"})
+    else: u = _set_qs(u, remove=["ssl", "sslmode"])
     return u
 
 class Settings(BaseSettings):
@@ -49,12 +35,10 @@ class Settings(BaseSettings):
 
     @property
     def ASYNC_DATABASE_URL(self) -> str:
-        # App (SQLAlchemy async + asyncpg) uchun
-        return _normalize_db_url(self.DATABASE_URL, "asyncpg") or self.DATABASE_URL
+        return _norm(self.DATABASE_URL, "asyncpg") or self.DATABASE_URL
 
     @property
     def SYNC_DATABASE_URL(self) -> str:
-        # Alembic (psycopg2) uchun
-        return _normalize_db_url(self.DATABASE_URL, "psycopg2") or self.DATABASE_URL
+        return _norm(self.DATABASE_URL, "psycopg2") or self.DATABASE_URL
 
 settings = Settings()
