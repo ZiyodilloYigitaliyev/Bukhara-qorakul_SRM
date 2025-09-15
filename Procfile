@@ -1,2 +1,1 @@
 web: gunicorn -k uvicorn.workers.UvicornWorker app.main:app --workers 3 --timeout 120 --bind 0.0.0.0:$PORT
-release: alembic upgrade heads
