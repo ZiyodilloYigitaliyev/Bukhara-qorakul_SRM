@@ -1,0 +1,121 @@
+# =========================
+# Python umumiy artefaktlar
+# =========================
+__pycache__/
+__pycache__
+*.pygo
+*.pyc
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.pyo
+*.whl
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Pyenv / Poetry / Pipenv
+.python-version
+.venv/
+venv/
+env/
+pipenv.lock
+poetry.lock
+
+# =========================
+# OS & IDE fayllari
+# =========================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+.vs/
+.ropeproject/
+.spyproject/
+
+# =========================
+# Test / coverage / logs
+# =========================
+.pytest_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+nosetests.xml
+*.log
+logs/
+*.pid
+
+# =========================
+# Keshlar / tahlil vositalari
+# =========================
+.cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+__pypackages__/
+
+# =========================
+# DB fayllari (lokal)
+# =========================
+*.sqlite3
+*.db
+
+# =========================
+# Env / maxfiylar
+# =========================
+.env
+.env.*
+!.env.example         # namuna commit qilinsin
+*.key
+*.pem
+*.crt
+*.cert
+
+# =========================
+# Jupyter / docs
+# =========================
+.ipynb_checkpoints/
+docs/_build/
+
+# =========================
+# Node (agar monorepo/front bo'lsa)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# =========================
+# Vaqtinchalik / backup
+# =========================
+*.bak
+*.orig
+*.tmp
+*.swp
+*.swo
+*~
+
+# =========================
+# Alembic
+# =========================
+# E'TIBOR: alembic/migrations fayllari TRACK qilinadi!
+# Shuning uchun ularni IGNORE QILMAYMIZ.
+# Faqat ularning __pycache__ larini chetga olamiz:
+alembic/__pycache__/
+migrations/__pycache__/
+alembic/versions/__pycache__/
+migrations/versions/__pycache__/
