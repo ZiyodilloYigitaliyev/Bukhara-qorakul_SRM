@@ -1,6 +1,6 @@
 # app/main.py
 from fastapi import FastAPI
-from app.api.routes import admin_credentials, auth, students, classes, attendance, score, teacher, mobile_teacher, teacher_auth, schedule, subject, auth_student, device, schools, face_terminal, payments, paynet_rpc, mobile_api
+from app.api.routes import admin_credentials, auth, students, classes, attendance, score, teacher, mobile_teacher, teacher_auth, schedule, subject, auth_student, device, schools, face_terminal, face_terminalV2, payments, paynet_rpc, mobile_api
 
 from fastapi.middleware.cors import CORSMiddleware
 from app.realtime import chat_ws_router
@@ -36,6 +36,7 @@ app.include_router(subject.router)
 app.include_router(score.router)
 app.include_router(teacher.router)
 app.include_router(face_terminal.router)
+app.include_router(face_terminalV2.router)
 app.include_router(device.router)
 app.include_router(payments.router)
 app.include_router(paynet_rpc.router)

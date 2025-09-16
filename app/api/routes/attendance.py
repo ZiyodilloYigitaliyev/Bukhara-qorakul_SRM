@@ -2,8 +2,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from typing import List
-from datetime import datetime, time
+from typing import List, Optional
+from datetime import datetime, time, date
 
 from app.db.database import get_db
 from app.models.attendance import Attendance
@@ -42,6 +42,41 @@ async def create_attendance(
     return AttendanceOut.model_validate(new_att)
 
 
+@router.get("/by-school", response_model=List[AttendanceOut], response_model_by_alias=True)
+async def get_attendance_by_school(
+    school_id: int,
+    date_from: Optional[date] = None,
+    date_to: Optional[date] = None,
+    student_id: Optional[int] = None,
+    limit: int = 200,
+    offset: int = 0,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """
+    Attendance ro'yxatini maktab bo'yicha filtrlab olish.
+    Qo'shimcha filtrlash: date_from, date_to, student_id.
+    Pagination: limit/offset.
+    """
+    conditions = [Attendance.school_id == school_id]
+    if date_from:
+        conditions.append(Attendance.date >= date_from)
+    if date_to:
+        conditions.append(Attendance.date <= date_to)
+    if student_id:
+        conditions.append(Attendance.student_id == student_id)
+
+    stmt = (
+        select(Attendance)
+        .where(*conditions)  # bir nechta shart -> AND
+        .order_by(Attendance.date.desc(), Attendance.id.desc())
+        .offset(offset)
+        .limit(limit)
+    )
+    result = await db.execute(stmt)
+    rows = result.scalars().all()
+    return [AttendanceOut.model_validate(r) for r in rows]
+
 @router.get("/", response_model=List[AttendanceOut], response_model_by_alias=True)
 async def get_all_attendance(
     db: AsyncSession = Depends(get_db),
@@ -67,6 +102,8 @@ async def get_attendance_by_id(
         raise HTTPException(status_code=404, detail="Attendance not found")
     # ⚠️ ORM -> Schema
     return AttendanceOut.model_validate(attendance)
+
+
 
 
 @router.post("/", response_model=AttendanceOut, response_model_by_alias=True)
