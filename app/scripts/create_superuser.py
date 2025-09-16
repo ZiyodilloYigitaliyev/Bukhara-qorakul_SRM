@@ -3,13 +3,13 @@ import asyncio
 import argparse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.db.session import async_session  # async engine ishlatilishi shart
+from app.db.session import async_session  
 from app.models.user import User
 from app.core.utils import hash_password
 
 
 async def ensure_superuser(username: str, password: str, full_name: str) -> None:
-    async with async_session() as session:  # type: AsyncSession
+    async with async_session() as session:  
         # username bo'yicha idempotent tekshiruv
         existing: User | None = await session.scalar(
             select(User).where(User.username == username)

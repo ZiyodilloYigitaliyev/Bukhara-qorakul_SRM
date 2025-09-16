@@ -4,6 +4,8 @@ from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 import re
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
+
 def _set_qs(u: str, remove=None, add=None) -> str:
     p = urlparse(u); q = dict(parse_qsl(p.query, keep_blank_values=True))
     for k in (remove or []): q.pop(k, None)
@@ -40,11 +42,12 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
-
+    ACCESS_TOKEN_EXPIRE_MINUTES: int 
     # Eskiz
     ESKIZ_BASE_URL: str
     ESKIZ_EMAIL: str
     ESKIZ_PASSWORD: str
+    
     ESKIZ_FROM: str
 
     model_config = SettingsConfigDict(

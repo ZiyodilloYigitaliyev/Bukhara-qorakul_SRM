@@ -489,3 +489,60 @@ async def notify_no_show(
             skipped.append({"student_id": s.id, "reason": str(e)})
 
     return {"date": str(d), "sent": sent, "skipped": skipped, "counts": {"sent": len(sent), "skipped": len(skipped)}}
+
+import os, json
+from datetime import datetime
+
+# ... (mavjud importlar saqlansin)
+
+# Xom POST loglar joyi: .env da FACE_RAW_LOG_DIR berib qo‘ysangiz bo‘ladi
+FACE_RAW_LOG_DIR = os.getenv("FACE_RAW_LOG_DIR", "logs/face_raw")
+
+@router.post("/dump")
+async def dump_raw_post(request: Request):
+    """
+    Nima POST qilinsa, o‘sha xom bodyni txt faylga yozib qo‘yadi.
+    Har kuni bitta faylga append bo‘ladi: logs/face_raw/2025-09-16.txt
+    """
+    # meta
+    ctype = (request.headers.get("content-type") or "")
+    client_ip = request.client.host if request.client else None
+    ua = request.headers.get("user-agent")
+
+    # xom body
+    body_bytes = await request.body()
+    # UTF-8 bo‘lmasa ham yozila olishi uchun "latin-1" fallback
+    try:
+        body_text = body_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        body_text = body_bytes.decode("latin-1", errors="ignore")
+
+    # fayl nomi: kunlik
+    utc_now = datetime.utcnow()
+    day_str = utc_now.strftime("%Y-%m-%d")
+    ts = utc_now.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3] + "Z"
+
+    os.makedirs(FACE_RAW_LOG_DIR, exist_ok=True)
+    file_path = os.path.join(FACE_RAW_LOG_DIR, f"{day_str}.txt")
+
+    # yoziladigan blok (ajratkichlar bilan)
+    header = {
+        "time": ts,
+        "ip": client_ip,
+        "content_type": ctype,
+        "user_agent": ua,
+        "content_length": len(body_bytes),
+    }
+    block = (
+        "\n==================== POST ====================\n"
+        + json.dumps(header, ensure_ascii=False)
+        + "\n----------------------------------------------\n"
+        + body_text
+        + "\n================== END POST ==================\n"
+    )
+
+    # yozish (oddiy sync; kichik fayllar uchun yetarli)
+    with open(file_path, "a", encoding="utf-8") as f:
+        f.write(block)
+
+    return {"ok": True, "saved_to": file_path, "bytes": len(body_bytes)}

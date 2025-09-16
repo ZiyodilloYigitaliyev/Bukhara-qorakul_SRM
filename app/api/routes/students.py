@@ -16,8 +16,14 @@ from app.core.dependencies import require_role
 from app.schemas.attendance import AttendanceOut
 from app.schemas.score import ScoreOut
 from fastapi import status
-from sqlalchemy import select
+from sqlalchemy import or_, select
 from app.models.student import Student
+from app.models.schools import School
+from fastapi import APIRouter, Depends, HTTPException, Query
+
+
+
+
 
 router = APIRouter(prefix="/students", tags=["Students"])
 
@@ -75,6 +81,48 @@ async def delete_student(
     return {"detail": "O'quvchi o'chirildi"}
 
 
+@router.get("/{school_id}/students", response_model=list[StudentOut])
+async def get_students_by_school(
+    school_id: int,
+    db: AsyncSession = Depends(get_db),
+    user=Depends(require_role("staff", "superuser")),
+    # ixtiyoriy filtr va paginatsiya
+    search: str | None = Query(None, description="Ism/familiya bo‘yicha qidiruv"),
+    class_name: str | None = Query(None, description="Masalan: 5A"),
+    is_active: bool | None = Query(None, description="True/False"),
+    limit: int = Query(100, ge=1, le=1000),
+    offset: int = Query(0, ge=0),
+):
+    # 1) Maktab mavjudligini tekshiramiz (404 bermasa, frontendga aniq xabar)
+    res_school = await db.execute(select(School).where(School.id == school_id))
+    school = res_school.scalar_one_or_none()
+    if not school:
+        raise HTTPException(status_code=404, detail="Maktab topilmadi")
+
+    # 2) Asosiy so'rov
+    q = select(Student).where(Student.school_id == school_id)
+
+    if is_active is not None:
+        q = q.where(Student.is_active.is_(is_active))
+
+    if class_name:
+        q = q.where(Student.class_name == class_name)
+
+    if search:
+        s = f"%{search.strip()}%"
+        # Eng xavfsiz maydonlar: first_name & last_name (agar login/phone bo'lsa, qo‘shib ketish mumkin)
+        q = q.where(
+            or_(
+                Student.first_name.ilike(s),
+                Student.last_name.ilike(s),
+            )
+        )
+
+    q = q.order_by(Student.last_name.asc(), Student.first_name.asc()).offset(offset).limit(limit)
+
+    result = await db.execute(q)
+    students = result.scalars().all()
+    return students
 
 
 

@@ -1,6 +1,6 @@
 # app/core/security.py
-from datetime import datetime, timedelta
-from typing import Union
+from datetime import datetime, timedelta, timezone
+from typing import Any, Optional
 
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -10,27 +10,45 @@ from app.core.config import settings
 # Parollarni hash qilish uchun
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# Token generatsiyasi uchun
-SECRET_KEY = settings.SECRET_KEY
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # 1 kun
-
-def verify_password(plain_password, hashed_password):
+def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
-def get_password_hash(password):
+def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
-def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None):
-    to_encode = data.copy()
-    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
-    to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-    return encoded_jwt
+def create_access_token(
+    subject: str | int,
+    role: str,
+    expires_minutes: Optional[int] = None,
+    extra: Optional[dict[str, Any]] = None,
+) -> str:
+    """
+    JWT yaratadi: sub, role, iat, nbf, exp (UTC).
+    expires_minutes berilsa o‘shani oladi, aks holda settings.ACCESS_TOKEN_EXPIRE_MINUTES.
+    """
+    now = datetime.now(timezone.utc)
+    exp_minutes = expires_minutes if expires_minutes is not None else settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
-def decode_access_token(token: str):
+    to_encode: dict[str, Any] = {
+        "sub": str(subject),
+        "role": role,
+        "type": "access",
+        "iat": int(now.timestamp()),
+        "nbf": int(now.timestamp()),
+        "exp": int((now + timedelta(minutes=exp_minutes)).timestamp()),
+    }
+    if extra:
+        to_encode.update(extra)
+
+    return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
+
+def decode_access_token(token: str) -> Optional[dict[str, Any]]:
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        return payload
+        return jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
     except JWTError:
         return None
+
+def get_expires_in_seconds(expires_minutes: Optional[int] = None) -> int:
+    """Frontendga qulay: token muddati (sekund)."""
+    minutes = expires_minutes if expires_minutes is not None else settings.ACCESS_TOKEN_EXPIRE_MINUTES
+    return int(minutes * 60)
