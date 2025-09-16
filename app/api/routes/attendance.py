@@ -130,3 +130,17 @@ async def delete_attendance_by_id(
     await db.delete(attendance)
     await db.commit()
     return {"detail": "Attendance deleted"}
+
+@router.delete("/")
+async def delete_all_attendance(
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(get_current_user)
+):
+    result = await db.execute(select(Attendance))
+    attendances = result.scalars().all()
+    if not attendances:
+        raise HTTPException(status_code=404, detail="No attendance records found")
+    for attendance in attendances:
+        await db.delete(attendance)
+    await db.commit()
+    return {"detail": "All attendance records deleted"}
