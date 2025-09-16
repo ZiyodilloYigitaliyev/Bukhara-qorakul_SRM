@@ -182,3 +182,13 @@ async def reset_student_credentials(
 
     await db.refresh(student)
     return student, temp_password
+
+async def delete_all_students(db: AsyncSession) -> bool:
+    result = await db.execute(select(Student))
+    students = result.scalars().all()
+    if not students:
+        return False
+    for student in students:
+        await db.delete(student)
+    await db.commit()
+    return True

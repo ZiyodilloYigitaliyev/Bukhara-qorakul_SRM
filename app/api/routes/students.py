@@ -80,6 +80,16 @@ async def delete_student(
         raise HTTPException(status_code=404, detail="O'quvchi topilmadi")
     return {"detail": "O'quvchi o'chirildi"}
 
+@router.delete("/")
+async def delete_student(
+    db: AsyncSession = Depends(get_db),
+    user=Depends(require_role("superuser"))
+):
+    success = await crud_student.delete_all_students(db)
+    if not success:
+        raise HTTPException(status_code=404, detail="O'quvchilar topilmadi")
+    return {"detail": "Barcha o'quvchilar o'chirildi"}
+
 
 @router.get("/{school_id}/students", response_model=list[StudentOut])
 async def get_students_by_school(
