@@ -1,9 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-
+from sqlalchemy.orm import selectinload
+from sqlalchemy import func
 from app.db.database import get_db
 from app.models.schools import School
+from app.models.student import Student
 from app.schemas.schools import SchoolCreate, SchoolOut, SchoolUpdate
 from app.core.dependencies import require_role
 from app.schemas.student import StudentOut
