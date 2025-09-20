@@ -39,7 +39,7 @@ ESKIZ_FROM = settings.ESKIZ_FROM
 BLOCK_MINUTES = int(os.getenv("FACE_BLOCK_MINUTES", "1"))
 
 # Kechikish chegarasi (HH:MM). default 08:00
-_LATE_HHMM = os.getenv("FACE_LATE_HHMM", "21:30")
+_LATE_HHMM = os.getenv("FACE_LATE_HHMM", "8:00")
 try:
     _hh, _mm = map(int, _LATE_HHMM.split(":"))
     LATE_THRESHOLD = time(_hh, _mm)
@@ -48,7 +48,7 @@ except Exception:
 
 # dedupe (bir necha soniyada ketma-ket urish bo‘lsa skip)
 _DEDUPE: Dict[Tuple[str, str], float] = {}
-_DEDUPE_WINDOW_SEC = float(os.getenv("FACE_DEDUPE_SEC", "6"))
+_DEDUPE_WINDOW_SEC = float(os.getenv("FACE_DEDUPE_SEC", "4"))
 
 # =========================
 #   Eskiz SMS (inline)
